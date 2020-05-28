@@ -1,0 +1,56 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"title": "Mewthree API",
+		"description": "Pokémon Go API written in JavaScript as a set of serverless functions for the Vercel platform (formerly Zeit).",
+		"version": "0.0.1",
+		"license": {
+			"name": "MIT"
+		}
+	},
+	"host": "mewthree-api.now.sh",
+	"basePath": "/api",
+	"tags": [
+		{
+			"name": "raids",
+			"description": "Everything related to raids (bosses, counters, etc.)"
+		}
+	],
+	"schemes": ["https"],
+	"paths": {
+		"/raids/bosses": {
+			"get": {
+				"tags": ["raids"],
+				"summary": "Find current raid bosses",
+				"description": "Returns an object with tiers as keys and values as arrays of possible raid boss encounters",
+				"produces": ["application/json"],
+				"responses": {
+					"200": {
+						"description": "successful operation",
+						"schema": { "$ref": "#/definitions/RaidBosses" }
+					},
+					"400": { "description": "Something went wrong." }
+				}
+			}
+		}
+	},
+	"definitions": {
+		"RaidBosses": {
+			"type": "object",
+			"properties": {
+				"Tier 1": { "$ref": "#/definitions/ArrayOfString" },
+				"Tier 2": { "$ref": "#/definitions/ArrayOfString" },
+				"Tier 3": { "$ref": "#/definitions/ArrayOfString" },
+				"Tier 4": { "$ref": "#/definitions/ArrayOfString" },
+				"Tier 5": { "$ref": "#/definitions/ArrayOfString" }
+			}
+		},
+		"ArrayOfString": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"example": ["Turtwig", "Chimchar", "Piplup"]
+			}
+		}
+	}
+}
