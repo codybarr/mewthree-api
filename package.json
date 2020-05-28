@@ -1,6 +1,7 @@
 {
 	"name": "mewthree-api",
-	"version": "0.0.0",
+	"version": "0.0.1",
+	"license": "MIT",
 	"scripts": {
 		"start": "yarn build && vercel dev",
 		"build": "node build.js"
