@@ -44,7 +44,7 @@ const saveData = async (filename, data) => {
 const raidBosses = async () => {
 	try {
 		const raid_bosses = await getRaidBosses()
-		const raid_boss_file_path = `../public/raid-bosses.json`
+		const raid_boss_file_path = `../data/raid-bosses.json`
 
 		await saveData(
 			`${__dirname}/${raid_boss_file_path}`,
