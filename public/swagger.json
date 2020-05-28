@@ -12,15 +12,15 @@
 	"basePath": "/api",
 	"tags": [
 		{
-			"name": "raids",
+			"name": "raid",
 			"description": "Everything related to raids (bosses, counters, etc.)"
 		}
 	],
 	"schemes": ["https"],
 	"paths": {
-		"/raids/bosses": {
+		"/raid/bosses": {
 			"get": {
-				"tags": ["raids"],
+				"tags": ["raid"],
 				"summary": "Find current raid bosses",
 				"description": "Returns an object with tiers as keys and values as arrays of possible raid boss encounters",
 				"produces": ["application/json"],
